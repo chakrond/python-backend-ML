@@ -1,7 +1,15 @@
+# Activate Virtual Env
+# .venv\Scripts\activate.bat
+
 import os
+
 # import configparser
-from src.app import create_app
 from decouple import config
+
+# flask app
+from src.app import create_app
+
+myDir = os.getcwd()
 
 # config = configparser.ConfigParser()
 # config.read(os.path.abspath(os.path.join("./config/.ini")))

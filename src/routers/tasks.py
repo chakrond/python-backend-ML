@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_cors import CORS
 
-from db.db_tasks import add_task
-from utils.expect import expect
+from ..db.tasks import add_task
+from ..utils.expect import expect
 
 # Blueprint
 task_api = Blueprint(

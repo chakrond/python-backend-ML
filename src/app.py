@@ -10,7 +10,7 @@ from bson import json_util, ObjectId
 from datetime import datetime, timedelta
 
 # Register Blueprints/Routers
-from routers.r_tasks import task_api
+from .routers.tasks import task_api
 
 class MongoJsonEncoder(JSONEncoder):
     def default(self, obj):
