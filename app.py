@@ -8,9 +8,9 @@ from src.flask import create_app
 
 # Create app
 app = create_app()
+app.config['MONGO_URI'] = os.environ['MONGODB_URI']
 
 if __name__ == "__main__":
     
     app.config['DEBUG'] = True
-    app.config['MONGO_URI'] = os.environ['MONGODB_URI']
     app.run(threaded=True, port=5000)
