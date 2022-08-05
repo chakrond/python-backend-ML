@@ -27,9 +27,9 @@ db = LocalProxy(get_db)
 def add_task(task_id, note):
 
     task = { 
-        'task_id' : task_id,
-        'note' : note,
-        'date' : datetime.now()
+        "task_id" : task_id,
+        "note" : note,
+        "date" : datetime.now()
     }
 
     return db.tasks.insert_one(task)
