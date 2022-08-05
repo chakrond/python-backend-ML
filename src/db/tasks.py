@@ -8,21 +8,18 @@ from bson.objectid import ObjectId
 from bson.errors import InvalidId
 from datetime import datetime
 
-# def get_db():
+def get_db():
 
-#     db = getattr(g, "_database", None)
+    db = getattr(g, "_database", None)
 
-#     if db is None:
+    if db is None:
 
-#         db = g._database = PyMongo(current_app).db
+        db = g._database = PyMongo(current_app).db
        
-#     return db
+    return db
 
-# # LocalProxy
-# db = LocalProxy(get_db)
-
-# DB Instance
-db = g._database = PyMongo(current_app).db
+# LocalProxy
+db = LocalProxy(get_db)
 
 
 # Database commands
