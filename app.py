@@ -12,9 +12,11 @@ from src.flask import create_app
 # config = configparser.ConfigParser()
 # config.read(os.path.abspath(os.path.join("./config/.ini")))
 
+# Create app
+app = create_app()
+
 if __name__ == "__main__":
-    app = create_app()
+    
     app.config['DEBUG'] = True
     app.config['MONGO_URI'] = config('MONGODB_URI')
-
     app.run(threaded=True, port=5000)
