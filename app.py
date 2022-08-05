@@ -7,7 +7,7 @@ import os
 from decouple import config
 
 # flask app
-from src.app import create_app
+from src.flask import create_app
 
 myDir = os.getcwd()
 
