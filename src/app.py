@@ -9,7 +9,8 @@ from flask_cors import CORS
 from bson import json_util, ObjectId
 from datetime import datetime, timedelta
 
-# from mflix.api.movies import movies_api_v1
+# Register Blueprints/Routers
+from routers.r_tasks import task_api
 
 class MongoJsonEncoder(JSONEncoder):
     def default(self, obj):
@@ -31,8 +32,9 @@ def create_app():
                 )
     CORS(app)
     app.json_encoder = MongoJsonEncoder
-    # app.register_blueprint(movies_api_v1)
+    app.register_blueprint(task_api)
 
+    # Router to index
     @app.route('/', defaults={'path': ''})
     @app.route('/<path:path>')
 

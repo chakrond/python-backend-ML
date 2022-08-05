@@ -6,12 +6,10 @@ from flask_pymongo import PyMongo
 from pymongo.errors import DuplicateKeyError, OperationFailure
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
-
+from datetime import datetime
 
 def get_db():
-    """
-    Configuration method to return db instance
-    """
+
     db = getattr(g, "_database", None)
 
     if db is None:
@@ -24,4 +22,15 @@ def get_db():
 db = LocalProxy(get_db)
 
 
+# Database commands
+
+def add_task(task_id, note):
+
+    task = { 
+        'task_id' : task_id,
+        'note' : note,
+        'date' : datetime.now()
+    }
+
+    return db.tasks.insert_one(task)
 
