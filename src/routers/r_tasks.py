@@ -4,7 +4,7 @@ from flask_cors import CORS
 from db.db_tasks import add_task
 from utils.expect import expect
 
-
+# Blueprint
 task_api = Blueprint(
     'task_api', 'task_api', url_prefix='/task/')
 
