@@ -32,8 +32,15 @@ def add():
 # Prediction test
 @task_api.route('/predict', methods=['POST'])
 def predict():
+
     if request.method == 'POST':
-        file = request.files['file']
-        img_bytes = file.read()
-        class_id, class_name = get_prediction(image_bytes=img_bytes)
-        return jsonify({'class_id': class_id, 'class_name': class_name})
+
+        try:
+
+            file = request.files['file']
+            img_bytes = file.read()
+            class_id, class_name = get_prediction(image_bytes=img_bytes)
+            return jsonify({'class_id': class_id, 'class_name': class_name})
+
+        except Exception as e:
+            return jsonify({"error": str(e)}), 400
