@@ -1,4 +1,4 @@
-import image
+from . import image
 from torchvision import models
 import json
 
