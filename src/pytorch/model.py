@@ -1,4 +1,4 @@
-from image import *
+from .image import transform_image
 from torchvision import models
 import json
 
