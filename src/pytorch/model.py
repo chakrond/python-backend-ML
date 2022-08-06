@@ -1,4 +1,4 @@
-from . import image
+import pytorch.image as image
 from torchvision import models
 import json
 
