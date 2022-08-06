@@ -9,7 +9,7 @@ from src.flask import create_app
 # Create app
 app = create_app()
 
-# comment for dev
+# comment for dev,
 app.config['MONGO_URI'] = os.environ['MONGODB_URI']
 
 if __name__ == "__main__":
