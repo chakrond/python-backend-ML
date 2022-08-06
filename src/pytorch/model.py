@@ -1,3 +1,4 @@
+import os
 from .image import transform_image
 from torchvision import models
 import json
@@ -11,7 +12,9 @@ model.eval()
 
 
 # Get prediction result
-imagenet_class_index = json.load(open('./image_net_class/imagenet_class_index.json'))
+dir = os.path.abspath(os.path.dirname(__file__))
+imagenet_folder = os.path.join(dir, './image_net_class/imagenet_class_index.json')
+imagenet_class_index = json.load(open(imagenet_folder))
 
 def get_prediction(image_bytes):
     tensor = transform_image(image_bytes=image_bytes)
