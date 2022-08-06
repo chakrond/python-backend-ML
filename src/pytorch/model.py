@@ -1,4 +1,4 @@
-from image import transform_image
+import image
 from torchvision import models
 import json
 
@@ -14,7 +14,7 @@ model.eval()
 imagenet_class_index = json.load(open('./image_net_class/imagenet_class_index.json'))
 
 def get_prediction(image_bytes):
-    tensor = transform_image(image_bytes=image_bytes)
+    tensor = image.transform_image(image_bytes=image_bytes)
     outputs = model.forward(tensor)
     _, y_hat = outputs.max(1)
     predicted_idx = str(y_hat.item())
