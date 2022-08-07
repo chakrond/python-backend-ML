@@ -11,7 +11,7 @@ model = models.densenet121(pretrained=True)
 model.eval()
 
 
-# Get prediction result
+# Get prediction result g
 dir = os.path.abspath(os.path.dirname(__file__))
 imagenet_folder = os.path.join(dir, './image_net_class/imagenet_class_index.json')
 imagenet_class_index = json.load(open(imagenet_folder))
