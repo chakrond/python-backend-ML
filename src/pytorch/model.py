@@ -21,4 +21,5 @@ def get_prediction(image_bytes):
     outputs = model.forward(tensor)
     _, y_hat = outputs.max(1)
     predicted_idx = str(y_hat.item())
+    del tensor
     return imagenet_class_index[predicted_idx]
