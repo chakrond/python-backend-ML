@@ -2,6 +2,7 @@ import os
 from .image import transform_image
 from torchvision import models
 import json
+import gc
 
 # Create pre-trained model and prediction
 
